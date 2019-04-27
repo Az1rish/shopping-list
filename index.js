@@ -22,14 +22,11 @@ $('#js-shopping-list-form').keypress(event => {
     };
 });
 
-$('.shopping-item-toggle2').on('click', event => {
-    $('.shopping-item').toggleClass("shopping-item__checked");
+$('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
 });
 
-$('.shopping-item-toggle').on('click', function(event) {
-    $(this).parent( ".selected" ).css( "background", "yellow" );
+$('.shopping-item-delete').on('click', function(event) {
+    $(this).closest('li').remove();
 });
-
-$('.shopping-item-toggle1').on('click', event => {
-    console.log($(this).parent().toggleClass(".red"));
-});
+  
